@@ -36,5 +36,10 @@ header h1{
     border: 2px solid var(--clr-primary);
     border-radius: 10px;
     color: var(--clr-primary);
-    cursor: pointer;
+    text-decoration: none;
 }
+.card:hover{
+	background-color: var(--clr-primary);
+	color: white; 
+}
+

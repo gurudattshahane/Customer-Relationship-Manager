@@ -13,18 +13,10 @@
 	</header>
 	<main>
 		<div class="card-container">
-			<div class="card">
-				<p>Get List of Customers</p>
-			</div>
-			<div class="card">
-				<p>Update Customer Details</p>
-			</div>
-			<div class="card">
-				<p>Add Customer</p>
-			</div>
-			<div class="card">
-				<p>Delete Customer</p>
-			</div>
+			<a class="card" href="/customer-list">Get List of Customers</a>
+			<a class="card" href="/customer-update">Update Customer Details</a>
+			<a class="card" href="/customer-add">Add Customer</a>
+			<a class="card" href="/customer-delete">Delete Customer</a>
 		</div>
 	</main>
 </body>
