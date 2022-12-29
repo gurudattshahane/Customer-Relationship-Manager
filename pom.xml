@@ -19,12 +19,11 @@
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
-		<!-- 
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		-->
 
 		<!-- https://mvnrepository.com/artifact/jstl/jstl -->
 		<dependency>
@@ -32,6 +31,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		
 
 		<!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper -->
 		<dependency>

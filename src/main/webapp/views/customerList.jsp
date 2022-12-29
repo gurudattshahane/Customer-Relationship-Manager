@@ -14,7 +14,26 @@
 	</header>
 	<main>
 		<h2>Customer List</h2>
-		
+		<table>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="customer" items="${customerList}">
+					<tr>
+						<td>${customer.getId()}</td>
+						<td>${customer.getFirstName()}</td>
+						<td>${customer.getLastName()}</td>
+						<td>${customer.getEmail()}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 	</main>
 </body>
 </html>

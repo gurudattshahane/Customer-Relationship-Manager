@@ -16,3 +16,29 @@ header h1{
 	color: white;
 	font-size: 24px;
 }
+
+table, tr, td, th {
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: left;
+}
+table{
+	width: 80%;
+}
+th{
+    color: #1e3fc1;
+    background-color: #5493f773;  
+}
+
+tr:nth-child(2n){
+    background-color: #5493f740;
+}
+main {
+    margin-inline: 10%;
+    margin-top: 5%;
+}
+main table{
+    margin-top: 20px;
+}
+
+

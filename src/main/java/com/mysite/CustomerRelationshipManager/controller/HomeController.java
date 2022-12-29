@@ -1,11 +1,20 @@
 package com.mysite.CustomerRelationshipManager.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mysite.CustomerRelationshipManager.dao.CustomerRepo;
+import com.mysite.CustomerRelationshipManager.model.Customer;
+
 @Controller
 public class HomeController {
+	
+	@Autowired
+	CustomerRepo repo;
 	
 	@GetMapping(path="/")
 	public String home() {
@@ -17,7 +26,8 @@ public class HomeController {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("customerList");
-		
+		List<Customer> customerList = repo.findAll();
+		mv.addObject("customerList", customerList);
 		return mv;
 	}
 	
