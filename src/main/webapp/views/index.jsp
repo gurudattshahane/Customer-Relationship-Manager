@@ -5,11 +5,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Home</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
 	<header>
-		<h1>CRM - Customer Relationship Manager</h1>
+		<h1><a href="http://localhost:8080/">CRM - Customer Relationship Manager</a></h1>
 	</header>
 	<main>
 		<div class="card-container">

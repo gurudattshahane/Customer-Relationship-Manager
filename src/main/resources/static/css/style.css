@@ -16,6 +16,10 @@ header h1{
 	color: white;
 	font-size: 24px;
 }
+header h1 a{
+    text-decoration: none;
+    color: inherit;
+}
 .card-container {
     display: flex;
     gap: 20px;

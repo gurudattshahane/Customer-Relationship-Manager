@@ -16,29 +16,74 @@ header h1{
 	color: white;
 	font-size: 24px;
 }
+header h1 a{
+    text-decoration: none;
+    color: inherit;
+}
 
+/* table css start here */
 table, tr, td, th {
     border-collapse: collapse;
     padding: 10px;
     text-align: left;
 }
+table, tr, td{
+	 border: 1px solid rgb(128 128 128 / 30%);
+}
 table{
 	width: 80%;
+	border-collapse: separate;
+    border-spacing: 0;
+    border: none;
+    padding: 0;
+    box-shadow: #a6a7dba3 8px 15px 11px 0px;
+    border-radius: 10px;
 }
 th{
     color: #1e3fc1;
     background-color: #5493f773;  
+    border: 1px solid rgb(128 128 128 / 30%);
 }
 
 tr:nth-child(2n){
     background-color: #5493f740;
 }
+
+th:first-child{
+    border-top-left-radius: 10px;
+}
+th:last-child{
+    border-top-right-radius: 10px;
+}
+tr:last-child td:first-child{
+    border-bottom-left-radius: 10px;
+}
+tr:last-child td:last-child{
+    border-bottom-right-radius: 10px;
+} 
+main table{
+    margin-top: 20px;
+}
+/* table css ends here */
+
 main {
     margin-inline: 10%;
     margin-top: 5%;
 }
-main table{
-    margin-top: 20px;
+
+@media screen and (max-width: 600px) {
+    main{
+		margin-inline: 0;
+	}
+	table{
+		width: 100%;
+		overflow-x: scroll;
+		display: block;
+		padding: 0;
+	}
+	main h2{
+		margin-left: 2%;
+	}
 }
 
 

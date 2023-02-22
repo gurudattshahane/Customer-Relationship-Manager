@@ -6,11 +6,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Customer List</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link rel="stylesheet" href="/css/customerList.css">
 </head>
 <body>
 	<header>
-		<h1>CRM - Customer Relationship Manager</h1>
+		<h1><a href="http://localhost:8080/">CRM - Customer Relationship Manager</a></h1>
 	</header>
 	<main>
 		<h2>Customer List</h2>
@@ -27,8 +28,8 @@
 				<c:forEach var="customer" items="${customerList}">
 					<tr>
 						<td>${customer.getId()}</td>
-						<td>${customer.getFirstName()}</td>
-						<td>${customer.getLastName()}</td>
+						<td>${customer.getFirstname()}</td>
+						<td>${customer.getLastname()}</td>
 						<td>${customer.getEmail()}</td>
 					</tr>
 				</c:forEach>
