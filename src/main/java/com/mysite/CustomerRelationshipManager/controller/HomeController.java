@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -51,9 +52,24 @@ public class HomeController {
 	}
 	
 	@GetMapping(path="/customer-update")
-	public String updateCustomer()
+	public ModelAndView updateCustomer()
 	{
-		return "customerUpdate";
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("customerUpdate");
+		List<Customer> customerList = repo.findAll();
+		mv.addObject("customerList", customerList);
+		return mv;
+	}
+	@PutMapping(path="/customer-update", consumes= {"application/json"})
+	public ResponseEntity<Customer> UpdateCustomer(@RequestBody Customer customer){
+		int id = customer.getId();
+		Customer updateCustomer = repo.findById(id).orElse(new Customer());
+		updateCustomer.setFirstname(customer.getFirstname());
+		updateCustomer.setLastname(customer.getLastname());
+		updateCustomer.setEmail(customer.getEmail());
+		repo.save(updateCustomer);
+		
+		return new ResponseEntity<>(updateCustomer, HttpStatus.OK);
 	}
 	
 	@GetMapping(path="/customer-delete")
