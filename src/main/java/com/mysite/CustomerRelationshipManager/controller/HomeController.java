@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -73,8 +74,20 @@ public class HomeController {
 	}
 	
 	@GetMapping(path="/customer-delete")
-	public String deleteCustomer()
+	public ModelAndView deleteCustomer()
 	{
-		return "customerDelete";
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("customerDelete");
+		List<Customer> customerList = repo.findAll();
+		mv.addObject("customerList", customerList);
+		return mv;
+	}
+	@DeleteMapping(path="/customer-delete", consumes= {"application/json"})
+	public ResponseEntity<Customer> deleteCustomer(@RequestBody Customer customer)
+	{
+		int id = customer.getId();
+		Customer deleteCustomer = repo.findNthRecord(id);
+		repo.deleteById(deleteCustomer.getId());
+		return new ResponseEntity<>(customer, HttpStatus.OK);
 	}
 }
